@@ -4,6 +4,7 @@ import "./style.css";
 //Hook
 import { useState } from "react";
 
+
 import api from "../../utils/api";
 
 
@@ -45,7 +46,7 @@ function CadastroUsuario() {
         
         formdata.append("nome", nome)
         formdata.append("email", email)
-        formdata.append("passeWord", senha)
+        formdata.append("password", senha)
         formdata.append("user_img", foto)
         formdata.append("cep", cep)
         formdata.append("logradouro", logradouro)
@@ -56,13 +57,14 @@ function CadastroUsuario() {
 
         formdata.append("hardSkills", JSON.stringify(skillsSelecionadas))
 
-        api.post("user", formdata).then( (response) => {
+        api.post("users",formdata).then((response) => {
+            console.log(response)
             alert("Usuariocriandos com sucesso! ")
             //Navegaçao para login
 
-        }).catch( (error) => {
+        }).catch((error) => {
             console.log(error)
-    })
+        })
 
     }
 
