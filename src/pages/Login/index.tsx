@@ -29,8 +29,10 @@ function Login() {
             secureLocalStorage.setItem("user", response.data)
             navigate("/perfil/" + response.data.user.id)
 
-
+            navigate("perfil/" +response.data.user.id)
             
+            //Recarrega a pagina
+            navigate(0)
 
         })
     }
